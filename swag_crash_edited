@@ -1,7 +1,3 @@
-getgenv().enabled = true -- true/false | on or off
-getgenv().crashAmount = 1565 -- default 1550 (100%) | use 1705 for 110%
-getgenv().tpAfterCrash = "Admin" -- Teleports you to value after finished collecting | Bank, Admin, Void, Sky, Vault / Train (capitalized)
-
 -- This script is 100% open source and full credits to the Swagmode creators for the crash. I just edited it and added extra functions.
 
 if getgenv().enabled then do
