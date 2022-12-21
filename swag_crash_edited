@@ -1,3 +1,7 @@
+getgenv().enabled = true -- true/false | on or off
+getgenv().crashAmount = 1565 -- default 1550 (100%) | use 1705 for 110%
+getgenv().tpAfterCrash = "Admin" -- Teleports you to value after finished collecting | Bank, Admin, Void, Sky, Vault / Train (capitalized)
+
 -- This script is 100% open source and full credits to the Swagmode creators for the crash. I just edited it and added extra functions.
 
 if getgenv().enabled then do
@@ -304,7 +308,7 @@ StartCrasher.MouseButton1Click:Connect(function()
             until am >= 50
 
 
-            if getgenv().tpAfterCrash == "Admin" then
+            if getgenv().tpAfterCrash == "Admin" and Count >= getgenv().crashAmount then
                 local lp = game.Players.LocalPlayer
                     lp.Character.HumanoidRootPart.CFrame = CFrame.new(-871.191162, -29.177639, -580.99707, -0.99828887, 0.00228815316, 0.0584304407, 6.92761537e-09, 0.99923414, -0.0391301848, -0.0584752262, -0.0390632264, -0.997524321)
                     task.wait(0.05)
