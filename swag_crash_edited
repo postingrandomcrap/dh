@@ -295,14 +295,14 @@ StartCrasher.MouseButton1Click:Connect(function()
          until Count >= getgenv().crashAmount
 
          StartCrasher.BackgroundColor3 = Color3.fromRGB(65, 245, 0)
-
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+            
             local am = 1 --                       done counting/collecting
 
             repeat wait(0.05)
                 am = am + 1
                 print("READY")
             until am >= 50
-
 
             if getgenv().tpAfterCrash == "Admin" and Count >= getgenv().crashAmount then
                 local lp = game.Players.LocalPlayer
@@ -382,14 +382,10 @@ end
 
 
 --[[
-Swagmode Crasher Edited v1.2a - ! phil#9999
+Swagmode Crasher Edited v1.2b - ! phil#9999
 
 Changelog:
-[+] Added a teleport feature once you finish picking up
-[~] Possibly fixed getting stuck in the chair near the start
-[-] Removed auto crash
-[+] Crash Now button will now go yellow after 500 items
-[+] Added 2100 item limit
+[+] Fixed dying during crash
 
 
 getgenv().enabled = true -- true/false | on or off
