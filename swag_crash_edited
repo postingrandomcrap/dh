@@ -286,7 +286,7 @@ StartCrasher.MouseButton1Click:Connect(function()
                      Count = Count + 1
                  end   
              end
-             TextLabel.Text = 'You have '.. tostring(Count) .. ' items. You will crash at the selected amount!'
+             TextLabel.Text = 'You have '.. tostring(Count) .. ' items. Crash will be ready soon.'
              task.wait()
              if Count >= 500 then
                 StartCrasher.BackgroundColor3 = Color3.fromRGB(237, 212, 52)
@@ -296,7 +296,9 @@ StartCrasher.MouseButton1Click:Connect(function()
 
          StartCrasher.BackgroundColor3 = Color3.fromRGB(65, 245, 0)
             game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
-            
+
+            TextLabel.Text = 'Reached the Amount! You may crash.'
+
             local am = 1 --                       done counting/collecting
 
             repeat wait(0.05)
@@ -342,7 +344,7 @@ StartCrasher.MouseButton1Click:Connect(function()
          StartCrasher.MouseButton1Click:Connect(function()
             SwagmodeCrasher:Destroy()
             game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-            wait(1)
+            task.wait(0.1)
             Player.Character.HumanoidRootPart.CFrame = CFrame.new(0,99999999,0)
             wait(3)
             
@@ -382,10 +384,11 @@ end
 
 
 --[[
-Swagmode Crasher Edited v1.2b - ! phil#9999
+Swagmode Crasher Edited v1.2d - ! phil#9999
 
 Changelog:
-[+] Fixed dying during crash
+[~] Fixed dying when choosing the Void
+[~] Changed text
 
 
 getgenv().enabled = true -- true/false | on or off
@@ -393,4 +396,11 @@ getgenv().crashAmount = 1565 -- default 1550 (100%) | use 1705 for 110%
 getgenv().tpAfterCrash = "Admin" -- Teleports you to value after finished collecting | Bank, Admin, Void, Sky, Vault / Train (capitalized)
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/postingrandomcrap/dh/main/swag_crash_edited'))()
+
+How to use:
+1. Load in your Main
+2. Load in your Crasher and then start the crash
+3. Load in all of your alts and do your selling thing (check on the crasher every now and then)
+4. Once done dropping, after around an hour from when you started the crash the "Crash Now" button should go green, press it to crash. If not, I wouldn't press it.
+5. Done
 ]]
