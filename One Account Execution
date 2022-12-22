@@ -1,0 +1,9 @@
+local lp = game.Players.LocalPlayer
+local acc = 12403514 -- account id which you want executing on
+
+
+if lp.UserId == acc then
+   -- your script
+else
+  return false
+ end
