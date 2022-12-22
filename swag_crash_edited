@@ -1,7 +1,28 @@
 -- This script is 100% open source and full credits to the Swagmode creators for the crash. I just edited it and added extra functions.
 
 if getgenv().enabled then do
-pcall(function()
+
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local WindowFocusReleasedFunction = function()
+    RunService:Set3dRenderingEnabled(false)
+    return
+end
+
+local WindowFocusedFunction = function()
+    RunService:Set3dRenderingEnabled(true)
+    return
+end
+
+local Initialize = function()
+    UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
+    UserInputService.WindowFocused:Connect(WindowFocusedFunction)
+    return
+end
+Initialize()
+
+    pcall(function()
     game.StarterGui:SetCore("SendNotification", {
      Title = 'Crash Working!';
      Text = 'Edited by "! phil#9999" made by swagmode';
@@ -387,6 +408,7 @@ end
 Swagmode Crasher Edited v1.2d - ! phil#9999
 
 Changelog:
+[+] Added GPU/CPU Utiliziation
 [~] Fixed dying when choosing the Void
 [~] Changed text
 
